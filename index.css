@@ -1,41 +1,32 @@
 *{
     box-sizing: border-box;
-}
-body{
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
 }
-.container{
-    width: 100vw;
+.ShopPage{
+  width: 100%;
+}
+.shopContainer{
+    width: 100%;
+}
+.Item{
+    margin-top: 30px;
+}
+.shopContainer .items{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
+    justify-content: space-around;
 }
-.box{
+.items .items1{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 30px;
-    background-color: aqua;
-    margin: 1%;
-    width: 30%;
-    height: 40vh;
-}
-.box:nth-child(4){
-    width: 46%;
-}
-.box:nth-child(5){
-    width: 46%;
-}
-.miniBox{
-    display: flex;
-    background-color: azure;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
     align-items: center;
     justify-content: center;
-    padding: 10% 15%;
+    margin: 2%;
 }
-
+h1{
+    margin-left: 2%;
+}
