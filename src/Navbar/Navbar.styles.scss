@@ -1,0 +1,32 @@
+.Nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    
+    background-color: rgb(241, 228, 228);
+    h1{
+        color: black;
+    }
+    .Links{
+        display: flex;
+       
+        button{
+            cursor: pointer;
+            color: black;
+            margin: 30px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            outline: none;
+            border-bottom: 1px solid black;
+            
+        }
+
+    }
+
+}
+button:hover{
+                translate: rotate(360deg);
+                transform: translate 1s;
+            }

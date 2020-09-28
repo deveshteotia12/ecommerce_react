@@ -15,7 +15,7 @@ function MenuItems({item, imageURL, size, linkUrl, history,match})
         />
             <div className="content">
             
-            <h1 className="title">{item}</h1>
+            <h1 className="title">{item.toUpperCase()}</h1>
             <span className="subtitle">SHOP NOW</span>
             </div>
         </div>
