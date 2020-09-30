@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 //import Container from "./components/components.container"
 import HomePage from "./Pages/Homepage/hompage.component"
 import ShopPage from './Pages/Shoppage/ShopPage.componenets'
+import Header from "./components/header/header.component"
 const Hats=(props)=>{
   console.log(props)
   return(
@@ -14,6 +15,7 @@ function App()
 {
   return(
     <div>
+     <Header></Header>
      <Switch>
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/shop/:name" component={Hats}/>
