@@ -55,10 +55,10 @@ class Signup extends React.Component{
             <h1 className="title">I do not have an account</h1>
             <span>Sign Up with Your Email and Password</span>
             <form onSubmit={this.handelSubmit}>
-              <FormInput name="displayName" type="text" label="Full Name" value={this.state.displayName} handelChange={this.handelChange} required/>
-              <FormInput name="email" type="email" label="Email" value={this.state.email} handelChange={this.handelChange} required/>
-              <FormInput name="password" type="password" label="Password" value={this.state.password} handelChange={this.handelChange} required/>
-              <FormInput name="confirmPassword" type="password" label="Confirm Password" value={this.state.confirmPassword} handelChange={this.handelChange} required/>
+              <FormInput name="displayName" type="text" label="Full Name" value={this.state.displayName} handleChange={this.handelChange} required/>
+              <FormInput name="email" type="email" label="Email" value={this.state.email} handleChange={this.handelChange} required/>
+              <FormInput name="password" type="password" label="Password" value={this.state.password} handleChange={this.handelChange} required/>
+              <FormInput name="confirmPassword" type="password" label="Confirm Password" value={this.state.confirmPassword} handleChange={this.handelChange} required/>
               <CustomButton type="submit">Sign Up</CustomButton>
             </form>
             </div>

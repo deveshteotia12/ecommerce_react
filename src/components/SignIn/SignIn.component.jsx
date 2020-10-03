@@ -3,9 +3,9 @@ import React from 'react'
 import './SignIn.styles.scss'
 import FormInput from "../form-input/form-input.components"
 import CustomButton from "../Button/button.component"
-import {signInWithGoogle} from "../../firebase/firebase.utils"
+import {auth,signInWithGoogle} from "../../firebase/firebase.utils"
 
-import Signup from "../SignUp/signup.component"
+
 class SignIn extends React.Component{
     constructor()
     {
@@ -15,13 +15,24 @@ class SignIn extends React.Component{
             Password:''
         }
     }
-    handelChange=(event)=>{
+    handleChange=(event)=>{
         const {value,name}=event.target;
         this.setState({[name]: value});
     }
-    handelSubmit=(event)=>{
-        alert("YOUR EMAIL: "+ this.state.Email + " YOUR PASSWORD : "+this.state.Password);
-        event.prevetDefault();
+    handleSubmit=async (event)=>{
+
+        event.preventDefault();
+        const{Email, Password}=this.state;
+
+        try{
+           await auth.signInWithEmailAndPassword(Email,Password);
+            this.setState({Email: '',Password: ''})
+        }
+        catch(err)
+        {
+             console.error(err);
+        }
+        
     }
     render()
     {
@@ -31,8 +42,8 @@ class SignIn extends React.Component{
                  <h2 className="title">I already have an account</h2>
                  <span>Sign in with your email and password</span>
                  <form onSubmit={this.handleSubmit}>
-                     <FormInput name="Email" type="email" label="Email" value={this.state.Email} handelChange={this.handelChange} required/>
-                     <FormInput name="Password" type="password" label="Password" handelChange={this.handelChange} value={this.state.Password} required/>
+                     <FormInput name="Email" type="email" label="Email" value={this.state.Email} handleChange={this.handleChange} required/>
+                     <FormInput name="Password" type="password" label="Password" handleChange={this.handleChange} value={this.state.Password} required/>
                     <div className="buttons">
                      <CustomButton type="submit">Sign In</CustomButton>
                      <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
