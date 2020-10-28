@@ -31,4 +31,5 @@ const Header=(props)=>{
 const mapStatetoProps=(state)=>({
     currentUser: state.user.currentUser
 })
+
 export default connect(mapStatetoProps)(Header);
