@@ -1,0 +1,15 @@
+.cartItem
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    .productImage{
+        width: 60px;
+        height: 80px;
+        background-position: center;
+        background-size: cover;
+    }
+   
+
+}
