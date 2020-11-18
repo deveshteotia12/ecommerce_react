@@ -11,7 +11,7 @@ class CollectionItem extends React.Component
   }
    handelChange=()=>{
      //console.log("HIII")
-     console.log(this.props)
+     //console.log(this.props)
      this.props.addItems(this.props)
    }
   render()

@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux';
+import { decreaseQuantity, increaseQuantity } from './cart.actions';
 import  {CartActionTypes}  from './cart.types'
-import  { addItemToCart} from './cart.utils'
+import  { addItemToCart,removeItemsFromCart,IncreaseQuantity,DecreaseQuantity} from './cart.utils'
 const INTIAL_STATE={
     hidden: true,
     Items: []
@@ -21,7 +22,6 @@ const cartReducer=(state=INTIAL_STATE,action)=>
     { 
         return state;
     }*/
-    console.log(action.payload);
     switch(action.type){
         case CartActionTypes.HIDDEN_STATE:
             return{
@@ -34,6 +34,21 @@ const cartReducer=(state=INTIAL_STATE,action)=>
                 ...state,
                Items: addItemToCart(state.Items,action.payload)
                //Items: [...state.Items, action.payload]
+            }
+        case CartActionTypes.REMOVE_ITEMS:
+            return{
+                ...state,
+                Items: removeItemsFromCart(state.Items,action.payload)
+            }
+        case CartActionTypes.INCRE_QUAN:
+            return{
+                ...state,
+                Items: IncreaseQuantity(state.Items,action.payload)
+            }
+        case CartActionTypes.DECRE_QUAN:
+            return{
+                ...state,
+                Items: DecreaseQuantity(state.Items,action.payload)
             }
         default:
             return state;
